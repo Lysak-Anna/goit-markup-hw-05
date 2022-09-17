@@ -611,39 +611,41 @@ ul {
 .port-item .link {
    
     display: block;
+    
 }   
 .port-thumb {
    position: relative;
+   overflow: hidden;
 }
-.port-thumb::before {
-    display: inline-block;
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgba(33, 150, 243, 0.9);
-    opacity: 0;
+.portfolio-content {
     
-}
-
-.over-portfolio {
     position: absolute;
     top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9); 
+    opacity: 0;
     padding: 63px 24px;
-   
+    
     font-size: 18px;
     line-height: 28px;
     color: var(--primary-white-color);
-    opacity: 0;
-}
-.port-thumb:hover::before {
-    opacity: 1;
-}
-.port-thumb:hover .over-portfolio {
-    opacity: 1;
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+
+
+
 }
 
 
+
+
+.port-item .link:hover .portfolio-content {
+    transform: translateY(0);
+    opacity: 1;
+}
 
 .port-item .link:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
